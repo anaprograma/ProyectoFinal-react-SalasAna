@@ -1,0 +1,46 @@
+.card {
+  margin-top: 20px;
+
+  align-items: center;
+}
+.card-img-top {
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.des {
+  text-align: left;
+}
+.bi {
+  font-size: 25px;
+  margin-left: 5px;
+}
+.buy {
+  flex: 1;
+  color: black;
+}
+
+.button {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons {
+  color: black;
+}
+.addCart {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  text-decoration: none;
+}
+.color {
+  color: black;
+}

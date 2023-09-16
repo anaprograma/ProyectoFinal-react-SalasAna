@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: large;
+  color: #4f4f4f;
+  text-decoration: none;
+}
