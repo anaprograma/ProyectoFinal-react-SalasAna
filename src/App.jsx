@@ -16,6 +16,7 @@ import ProductCategory from "./pages/ProductCategory";
 import { ProductProvider } from "./Context/ProductContext";
 
 import { CartProvider } from "./Context/CartContext";
+import CheckOut from "./components/CheckOut";
 function App() {
   return (
     <ProductProvider>
@@ -35,6 +36,7 @@ function App() {
                   />
 
                   <Route path="/Itemdetail/:id" element={<ItemDetail />} />
+                  <Route path="/checkout" element={<CheckOut />} />
                 </Routes>
               </div>
             </Router>

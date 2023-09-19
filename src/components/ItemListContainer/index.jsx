@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 function ItemListContainer() {
   const { product } = useProductContext();
   const [isLoading, setIsLoading] = useState(true); // control spinner
-
+  console.log(product);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);

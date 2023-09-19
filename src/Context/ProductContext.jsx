@@ -23,9 +23,22 @@ export const ProductProvider = ({ children }) => {
     };
     getProd();
   }, []);
+  const updateStock = (productId, quantity) => {
+    // Encuentra el producto por su ID y actualiza el stock
+    const updatedProductList = product.map((p) => {
+      if (p.id === productId) {
+        // Asegura que el stock no sea menor que 0
+        p.stock = Math.max(0, p.stock + quantity);
+      }
+      return { ...p }; // Devuelve una nueva copia del producto
+    });
+
+    // Actualiza el estado con la nueva lista de productos
+    setProduct(updatedProductList);
+  };
 
   return (
-    <ProductContext.Provider value={{ product }}>
+    <ProductContext.Provider value={{ product, updateStock }}>
       {children}
     </ProductContext.Provider>
   );

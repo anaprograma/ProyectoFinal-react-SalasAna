@@ -32,7 +32,7 @@ const ProductCategory = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  console.log(product);
+
   return (
     <div className="product-category">
       {categories.map((product) => (

@@ -1,0 +1,17 @@
+.cart-container {
+  background-color: white;
+  border: 1px solid #615555;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  /* height: 160px; */
+  margin-top: 20px;
+}
+.cart-img {
+  max-width: 100%; /* La imagen no excederá el ancho del contenedor */
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  min-width: 100px; /* Tamaño mínimo en anchura */
+  min-height: 100px; /* Tamaño mínimo en altura */
+}

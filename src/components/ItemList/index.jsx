@@ -2,17 +2,23 @@ import React, { useContext, useState } from "react";
 import "./itemList.css";
 import Counter from "../Counter";
 import { CartContext } from "../../Context/CartContext";
+import { useProductContext } from "../../Context/ProductContext";
 
 const ItemList = ({ data, description, stock }) => {
-  // console.log(stock);
-
   const [quantityadd, setQuantityadd] = useState(0);
   const { addToCart } = useContext(CartContext);
+  const productContext = useProductContext();
 
   const handleAdd = (quantity) => {
-    setQuantityadd(quantity);
+    if (quantity <= stock) {
+      // Verificar que hay suficiente stock disponible
+      setQuantityadd(quantity);
+      addToCart(data, quantity);
 
-    addToCart(data, quantity);
+      productContext.updateStock(data.id, -quantity);
+    } else {
+      console.log("No hay suficiente stock disponible");
+    }
   };
   return (
     <div className="contain">
@@ -32,10 +38,8 @@ const ItemList = ({ data, description, stock }) => {
                 <h5 className="card-text">Price: {data.price}</h5>
                 <h5 className="text card-text">Product: {data.category}</h5>
                 <h5 className="card-text">Description: {data.description}</h5>
-
-                <Counter stock={stock} onadd={handleAdd} />
-
                 {/* //ACA VA EL BOTON CONTADOR */}
+                <Counter stock={stock} onadd={handleAdd} />
               </div>
             </div>
           </div>
